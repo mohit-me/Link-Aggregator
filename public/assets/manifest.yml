@@ -732,6 +732,8 @@ prettyPhoto/index.html: prettyPhoto/index-e59a7598145b2fc691c640be9b30c677.html
 prettyPhoto.html: prettyPhoto/index-e59a7598145b2fc691c640be9b30c677.html
 prettyPhoto/xhr_response.html: prettyPhoto/xhr_response-daaa73d09f9f3b0065e0696dbdcb94e0.html
 prettyPhoto/xhr_response/index.html: prettyPhoto/xhr_response-daaa73d09f9f3b0065e0696dbdcb94e0.html
+rails.validations.js: rails.validations-8f15a942c458552fadf7286906a39cb8.js
+rails/index.validations.js: rails.validations-8f15a942c458552fadf7286906a39cb8.js
 superfish-1.4.8/changelog.txt: superfish-1.4.8/changelog-64499b94991b5e5bdc004aa8b7471a9a.txt
 superfish-1.4.8/changelog/index.txt: superfish-1.4.8/changelog-64499b94991b5e5bdc004aa8b7471a9a.txt
 superfish-1.4.8/example.html: superfish-1.4.8/example-b99845af1596178d8d208db87294842e.html
