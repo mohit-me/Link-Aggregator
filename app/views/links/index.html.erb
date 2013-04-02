@@ -1,0 +1,42 @@
+<h1>Trending Now</h1>
+<br />
+<!-- featured -->
+            <div class="home-featured">
+                
+                <!-- Filter container -->
+                <div id="filter-container" class="cf">
+                    <% @links.each do |link| %>
+                    <figure class="web">
+                        <a href="links/<%= link.id %>" class="thumb"><img src=<%= link.imgUrl %> alt="alt" /></a>
+                        <figcaption>
+                            <a href=<%= link.name %>><h5 ><%= link.domain %> (+<%= link.votes_count %>)</h5></a>
+                            <%= link.content %> 
+                        </figcaption>
+                        <table>
+                            <td>
+                                <%=image_submit_tag "meta-bg-mod.png"%>
+                            </td>
+                            <% if user_signed_in? %>
+                                <td>
+                                <%= form_for(@vote, :remote => true) do |f| %>
+                                    <%= f.hidden_field "link_id", :value => link.id %>
+                                    <%= f.hidden_field "user_id", :value => current_user.id %>
+                                    <%= image_submit_tag "info-green.png" %>  
+                                <% end %>
+                                </td>
+                                <td>
+                                <% if link.submitted_by == current_user.email %>
+                                    <%= link_to link, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                                      <%=image_submit_tag "info-red.png"%>
+                                    <% end %>
+                                <% end %>
+                                </td>
+                            <% end %>
+                        </table>
+                    </figure>
+                    <% end %>
+                    
+                </div><!-- ENDS Filter container -->
+                
+            </div>
+            <!-- ENDS featured -->

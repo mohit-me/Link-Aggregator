@@ -1,0 +1,95 @@
+<p id="notice"><%= notice %></p>
+<!-- portfolio content-->
+          <div id="portfolio-content" class="cf">         
+        
+        
+          
+          <!-- project box -->
+        <div id="project-box" class="cf">
+        
+        
+          
+        
+        
+          <!-- slider -->
+          <div class="project-slider">
+                <div class="flexslider">
+              <ul class="slides">
+                <li>
+                  <img src=<%= @link.imgUrl %> alt="alt text" />
+                </li>
+              </ul>
+            </div>
+          </div>
+              <!-- ENDS slider -->
+
+
+          <div class="info">
+                <p><strong>Digg Count </strong><%= @link.votes_count %></p>
+                <p><strong>Submitted By </strong><%= @link.submitted_by %></p>
+                <p><strong>Date </strong> <%= @link.created_at %></p>
+                <p><a href=<%= @link.name %> class="launch" >Read the article</a></p>
+              </div>
+              
+              <!-- entry-content -->
+              <div class="entry-content">
+                  <h4 class="heading"><%= @link.content %></h4>
+              <img src=<%= @link.imgUrl %> alt="alt text" width="640"/>
+               <p><%= @imgLink %> </p>
+                <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-comments" data-href="<%= request.fullpath %>" data-width="640" data-num-posts="10"></div>
+
+                <!--<div class="multicolumn">
+                <p></p>
+                               
+                </div>-->
+              </div>
+              <!-- ENDS entry content -->
+              
+            </div>
+          <!-- ENDS project box -->
+          
+          
+        <!-- related -->
+        <!--
+        <div class="related-projects">
+          <h4 class="related-heading">Related projects</h4>
+          <div class="related-list cf">
+            <figure>
+              <a href="#" class="thumb"><img src="img/dummies/slides/01.jpg" alt="Alt text" /></a>
+              <a href="single.html" class="heading">Pellentesque habitant morbi</a>
+            </figure>
+            
+            <figure>
+              <a href="#" class="thumb"><img src="img/dummies/slides/02.jpg" alt="Alt text" /></a>
+              <a href="single.html" class="heading">Pellentesque habitant morbi</a>
+            </figure>
+            
+            <figure> 
+              <a href="#" class="thumb"><img src="img/dummies/slides/03.jpg" alt="Alt text" /></a>
+              <a href="single.html" class="heading">Pellentesque habitant morbi</a>
+            </figure>
+            
+            <figure>
+              <a href="#" class="thumb"><img src="img/dummies/slides/04.jpg" alt="Alt text" /></a>
+              <a href="single.html" class="heading">Pellentesque habitant morbi</a>
+            </figure>
+            
+          </div>
+        </div>
+      -->
+        <!-- ENDS related -->
+                  
+        
+        </div>
+        <!-- ENDS portfolio content-->
+
+<%= link_to 'Back', links_path %>

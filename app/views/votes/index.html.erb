@@ -1,0 +1,40 @@
+<div id="posts-list" class="cf">          
+       
+<% if user_signed_in? %>
+<% @votes.each do |vote| %>
+  <% if current_user.id == vote.user_id %>>
+    <% @links.each do |link| %>
+        <% if link.id ==vote.link_id %>
+        
+
+
+
+        <article class="format-image">
+            <div class="feature-image">
+              <a href="<%= link.name %>" data-rel="prettyPhoto">
+                <img src="<%= link.imgUrl %> " alt="Alt text" />
+              </a>
+            </div>
+            <div class="box cf">
+              <div class="entry-date"><div class="number">18</div><div class="month">MAR</div></div>
+              
+              <div class="excerpt">
+                <a href="single.html" class="post-heading" >UPVOTED</a>
+                <p><%=link.content %></p>
+                
+                
+              </div>
+              
+                
+            </div>
+          </article>
+      <% end %>     
+
+
+        
+        <%end %>
+        <% end %>
+
+  <% end %>
+<% end %>
+</div>

@@ -1,0 +1,51 @@
+<%= form_for(@link) do |f| %>
+  <!--<% if @link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
+
+      <ul>
+      <% @link.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>-->
+<% if f.object.new_record? %>
+  <div class="field">
+    <%= f.text_field :name %>
+  </div>
+<% end %>
+  <!--<div class="field">
+    <%= f.label :domain %><br />
+    <%= f.text_field :domain %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :upVotes, :value => 0 %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :downVotes, :value => 0 %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :imgUrl %><br />
+    <%= f.text_field :imgUrl %>
+  </div>-->
+  <% if f.object.new_record? %>
+    <%=f.hidden_field :submitted_by, :value => current_user.email %>
+  <% end %> 
+  <div class="actions">
+    <% if f.object.new_record? %>
+      <%= f.submit "Submit Link"%>
+    <% else %>
+      <%= f.submit "U"%>
+      <script>
+        //var ex = document.getElementsByClassName("edit_link");
+        //ex[0].submit()
+       // window.location = ""
+      </script>
+    <% end %>
+  </div>
+<% end %>

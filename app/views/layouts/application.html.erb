@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LinkTrial1</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" %>
+  <%= javascript_include_tag  "rails.validations","application" %>
+
+  <%= javascript_include_tag  "custom","tabs","css3-mediaqueries","jquery.columnizer.min","jquery.isotope.min.js","jquery.easing","lof-slider" %>
+ <link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
+		<!-- ENDS slider -->
+  
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+			<div class="wrapper cf">				
+				<div id="logo">
+					<a href="../"><%= image_submit_tag "logo.png" %></a>
+				</div>				
+				<!-- nav -->
+				<ul id="nav" class="sf-menu">
+					<li class="current-menu-item"><a href="../">HOME</a></li>
+					<% if user_signed_in? %>
+						<li><a href="../">Signed : <%= current_user.email %></a></li>
+	          <li><a href="/votes">My Activity</a></li>
+	          <li><%= link_to "NOT YOU? SIGN OUT", destroy_user_session_path, :method => :delete %></li>
+	        <% else %>
+	        	<li><%= link_to "SIGN IN", new_user_session_path %></li>
+						<li><%= link_to "REGISTER", new_user_registration_path %></li>
+	        <% end %>								
+				</ul>
+				<div id="combo-holder"></div>
+						<!-- ends nav -->
+			</div>
+		</header>
+
+	<!-- MAIN -->
+		<div id="main">
+			<div class="wrapper cf">
+
+	<div id ="container">
+		
+		<div id="user_nav">
+
+      	</div>
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+		<%= yield %>
+	</div>
+
+	</div><!-- ENDS WRAPPER -->
+	</div>
+		<!-- ENDS MAIN -->
+
+			<!-- FOOTER -->
+		<footer>
+			<div class="wrapper cf">
+			
+				<!-- widgets -->
+				<ul  class="widget-cols cf">
+					<li class="first-col">						
+						<div class="widget-block">
+							<h4></h4>
+		         		</div>		         		
+					</li>
+					<li class="second-col">						
+						<div class="widget-block">
+							<h4></h4>
+		         		</div>		         		
+					</li>
+					<li class="third-col">						
+						<div class="widget-block">
+							<h4></h4>
+		         		</div>		         		
+					</li>
+					<li class="fourth-col">						
+						<div class="widget-block">
+		         				<h4><%= link_to 'SUBMIT A LINK', new_link_path %></h4>
+		         		</div>		         		
+					</li>
+
+					<!--
+					<li class="first-col">
+						
+						<div class="widget-block">
+							<h4>RECENT POSTS</h4>
+							<div class="recent-post cf">
+								<a href="#" class="thumb"><img src="img/dummies/54x54.gif" alt="Post" /></a>
+								<div class="post-head">
+									<a href="#">Pellentesque habitant morbi senectus</a><span> March 12, 2011</span>
+								</div>
+							</div>
+							<div class="recent-post cf">
+								<a href="#" class="thumb"><img src="img/dummies/54x54.gif" alt="Post" /></a>
+								<div class="post-head">
+									<a href="#">Pellentesque habitant morbi senectus</a><span> March 12, 2011</span>
+								</div>
+							</div>
+							<div class="recent-post cf">
+								<a href="#" class="thumb"><img src="img/dummies/54x54.gif" alt="Post" /></a>
+								<div class="post-head">
+									<a href="#">Pellentesque habitant morbi senectus</a><span> March 12, 2011</span>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<li class="second-col">
+						
+						<div class="widget-block">
+							<h4>ABOUT</h4>
+							<p>Folder it's completely free this means you don't have to pay anything <a href="http://luiszuno.com/blog/license" tar >read license</a>.</p> 
+							<p>Visit <a href="http://templatecreme.com/" >Template Creme</a> and find the most beautiful free templates up to date.</p>
+						</div>
+						
+					</li>
+					
+					<li class="third-col">
+						
+						<div class="widget-block">
+							<div id="tweets" class="footer-col tweet">
+		         				<h4>TWITTER WIDGET</h4>
+		         			</div>
+		         		</div>
+		         		
+					</li>
+					
+					<li class="fourth-col">
+						
+						<div class="widget-block">
+							<h4>CATEGORIES</h4>
+							<ul>
+								<li class="cat-item"><a href="#" >Design</a></li>
+								<li class="cat-item"><a href="#" >Photo</a></li>
+								<li class="cat-item"><a href="#" >Art</a></li>
+								<li class="cat-item"><a href="#" >Game</a></li>
+								<li class="cat-item"><a href="#" >Film</a></li>
+								<li class="cat-item"><a href="#" >TV</a></li>
+							</ul>
+						</div>
+		         		
+					</li>	-->
+				</ul>
+				<!-- ENDS widgets -->	
+				
+				
+				<!-- bottom -->
+				<div class="footer-bottom">
+					<div class="left">A clone of digg.com</div>
+						<ul id="social-bar" class="cf sb">
+							<li><a href="http://www.facebook.com" title="Become a fan" class="facebook">Facebbok</a></li>
+							<li><a href="http://www.twitter.com" title="Follow my tweets" class="twitter">Twitter</a></li>
+							<li><a href="http://plus.google.com" title="Enter my circles" class="plus">Google Plus</a></li>
+						</ul>
+				</div>	
+				<!-- ENDS bottom -->
+			
+			</div>
+		</footer>
+		<!-- ENDS FOOTER -->
+
+</body>
+</html>
