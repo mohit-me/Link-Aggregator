@@ -48,7 +48,7 @@ test:
   database: linkTrial1_test
   pool: 5
   username: postgres
-  password: password
+  password: 
 
 production:
   adapter: postgresql
