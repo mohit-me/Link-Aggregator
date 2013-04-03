@@ -1,1 +1,1 @@
-Link-Aggregator
+Link-Aggregator (v 1.0)
